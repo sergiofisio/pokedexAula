@@ -289,7 +289,7 @@ var getPokemon = /*#__PURE__*/function () {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return axios.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0");
+          return axios.get("https://pokeapi.co/api/v2/pokemon?limit=1&offset=0");
         case 3:
           _yield$axios$get = _context2.sent;
           data = _yield$axios$get.data;
@@ -306,6 +306,7 @@ var getPokemon = /*#__PURE__*/function () {
                 case 3:
                   _yield$axios$get2 = _context.sent;
                   pokemonData = _yield$axios$get2.data;
+                  console.log(pokemonData);
                   div = (0, _functions.createHTMLElement)("div", ["relative", "w-48", "flex", "flex-col", "justify-center", "items-center", "border-2", "border-solid", "rounded-lg", "gap-2", "py-2", "cursor-pointer", "shadow-2xl", "border-".concat((0, _functions.getTypeStyles)(pokemonData.types[0].type.name)), "shadow-".concat((0, _functions.getTypeStyles)(pokemonData.types[0].type.name))]);
                   name = (0, _functions.createHTMLElement)("h1", ["font-bold", "text-2xl", "text-center", "uppercase"]);
                   number = (0, _functions.createHTMLElement)("h2", ["font-bold", "text-2xl", "text-center", "text-gray-600", "absolute", "top-4", "left-4"]);
@@ -319,7 +320,7 @@ var getPokemon = /*#__PURE__*/function () {
                   img.addEventListener("click", function () {
                     (0, _modal.openModal)(pokemonData);
                   });
-                case 16:
+                case 17:
                 case "end":
                   return _context.stop();
               }
@@ -389,7 +390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61682" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50596" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
