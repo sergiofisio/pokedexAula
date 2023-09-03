@@ -1,3 +1,5 @@
+const parse = require("node-html-parser");
+
 import axios from "axios";
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon";
@@ -29,12 +31,13 @@ const getPokemon = async () => {
         "border-solid",
         "rounded-lg",
         "gap-2",
-        "py-2"
+        "py-2",
+        "cursor-pointer"
       );
       name.textContent = data.name;
       name.classList.add("font-bold", "text-2xl", "text-center", "uppercase");
       img.src = data.sprites.other.home.front_default;
-      img.classList.add("h-full", "w-full");
+      img.classList.add("w-full", "hover:scale-110", "transition-transform");
       img.alt = data.name;
       weigth.textContent = `${data.weight} gr`;
       height.textContent = `${data.height} cm`;
