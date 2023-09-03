@@ -11,3 +11,4 @@
 # Ignore dependencies installed by package managers
 /node_modules
 /vendor
+.vercel
