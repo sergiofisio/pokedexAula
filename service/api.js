@@ -1,6 +1,4 @@
-// import parse from "node-html-parser";
-
-import axios from "axios";
+const axios = require("axios");
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon";
 
