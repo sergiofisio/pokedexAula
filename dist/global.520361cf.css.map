@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/global.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"global.520361cf.css","sourceRoot":"..","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  font-family: \"Poppins\", sans-serif;\r\n}\r\n"]}
