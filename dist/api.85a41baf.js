@@ -162,12 +162,6 @@ var getTypeStyles = function getTypeStyles(type) {
   }
 };
 exports.getTypeStyles = getTypeStyles;
-},{}],"assets/modal/pokeball.svg":[function(require,module,exports) {
-module.exports = "/pokeball.6af132cb.svg";
-},{}],"assets/modal/straighten.svg":[function(require,module,exports) {
-module.exports = "/straighten.043e09f5.svg";
-},{}],"assets/modal/weight.svg":[function(require,module,exports) {
-module.exports = "/weight.f7a6f48e.svg";
 },{}],"service/modal.js":[function(require,module,exports) {
 "use strict";
 
@@ -176,10 +170,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.openModal = void 0;
 var _functions = require("../functions/functions");
-var _pokeball = _interopRequireDefault(require("../assets/modal/pokeball.svg"));
-var _straighten = _interopRequireDefault(require("../assets/modal/straighten.svg"));
-var _weight = _interopRequireDefault(require("../assets/modal/weight.svg"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -188,9 +178,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 var openModal = function openModal(pokemon) {
   var main = document.querySelector("main");
-  console.log(pokemon);
   var div = (0, _functions.createHTMLElement)("div", ["flex", "flex-col", "justify-center", "items-center", "w-full", "h-full", "bg-gray-200", "bg-opacity-80", "fixed", "top-0", "right-0"]);
-  var divModal = (0, _functions.createHTMLElement)("div", ["w-3/5", "h-4/5", "flex", "flex-col", "justify-between", "items-center", "border-2", "border-solid", "rounded-lg", "border-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "shadow-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "shadow-xl", "gap-2", "py-2", "shadow-2xl", "bg-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "relative", "bg-[url(" + _pokeball.default + ")]", "bg-opacity-70"]);
+  var divModal = (0, _functions.createHTMLElement)("div", ["w-3/5", "h-4/5", "flex", "flex-col", "justify-between", "items-center", "border-2", "border-solid", "rounded-lg", "border-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "shadow-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "shadow-xl", "gap-2", "py-2", "shadow-2xl", "bg-".concat((0, _functions.getTypeStyles)(pokemon.types[0].type.name)), "relative", "bg-opacity-70"]);
   var closeButton = (0, _functions.createHTMLElement)("h2", ["absolute", "top-2", "right-4", "text-red-600", "text-2xl", "cursor-pointer"]);
   closeButton.textContent = "X";
   closeButton.addEventListener("click", function () {
@@ -205,7 +194,6 @@ var openModal = function openModal(pokemon) {
   var divHeight = (0, _functions.createHTMLElement)("div", ["flex", "flex-col", "justify-center", "items-center", "gap-2", "border-x-2", "border-solid", "border-gray-400", "w-full"]);
   var divInfoHeight = (0, _functions.createHTMLElement)("div", ["flex", "justify-center", "w-full"]);
   var imgHeight = (0, _functions.createHTMLElement)("img", []);
-  imgHeight.src = _straighten.default;
   var height = (0, _functions.createHTMLElement)("h2");
   height.textContent = "".concat(pokemon.height, " cm");
   var h2Height = (0, _functions.createHTMLElement)("h2", ["font-bold", "text-[0.5rem]", "text-center"]);
@@ -213,7 +201,6 @@ var openModal = function openModal(pokemon) {
   var divWeight = (0, _functions.createHTMLElement)("div", ["flex", "flex-col", "justify-center", "items-center", "gap-2", "w-full"]);
   var divInfoWeight = (0, _functions.createHTMLElement)("div", ["flex", "justify-center", "w-full"]);
   var imgWeight = (0, _functions.createHTMLElement)("img", []);
-  imgWeight.src = _weight.default;
   var weigth = (0, _functions.createHTMLElement)("h2", []);
   weigth.textContent = "".concat(pokemon.weight, " gr");
   var h2Weight = (0, _functions.createHTMLElement)("h2", ["font-bold", "text-[0.5rem]", "text-center"]);
@@ -248,7 +235,6 @@ var openModal = function openModal(pokemon) {
   titleStats.textContent = "Base Stats";
   var divStats = (0, _functions.createHTMLElement)("div", ["flex", "flex-col", "gap-2"]);
   var stats = pokemon.stats.map(function (stat) {
-    console.log(stat);
     var divStat = (0, _functions.createHTMLElement)("div", ["flex", "justify-center", "items-center", "gap-2"]);
     var h2 = (0, _functions.createHTMLElement)("h2", ["w-20", "font-bold", "text-[0.625rem]", "text-center", "uppercase", "text-black", "rounded-lg"]);
     var statValue = (0, _functions.createHTMLElement)("h2", ["w-20", "font-bold", "text-[0.625rem]", "text-center", "uppercase", "text-black", "rounded-lg"]);
@@ -261,14 +247,14 @@ var openModal = function openModal(pokemon) {
   divInfo.append(divTypes, divAtributes, titleStats, divStats);
   divAtributes.append(divWeight, divHeight, abilities);
   divWeight.append(divInfoWeight, h2Weight);
-  divInfoWeight.append(imgWeight, weigth);
+  divInfoWeight.append(weigth);
   divHeight.append(divInfoHeight, h2Height);
-  divInfoHeight.append(imgHeight, height);
+  divInfoHeight.append(height);
   abilities.append.apply(abilities, _toConsumableArray(allAbilities));
   divStats.append.apply(divStats, _toConsumableArray(stats));
 };
 exports.openModal = openModal;
-},{"../functions/functions":"functions/functions.js","../assets/modal/pokeball.svg":"assets/modal/pokeball.svg","../assets/modal/straighten.svg":"assets/modal/straighten.svg","../assets/modal/weight.svg":"assets/modal/weight.svg"}],"service/api.js":[function(require,module,exports) {
+},{"../functions/functions":"functions/functions.js"}],"service/api.js":[function(require,module,exports) {
 "use strict";
 
 var _functions = require("../functions/functions");
@@ -390,7 +376,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57681" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

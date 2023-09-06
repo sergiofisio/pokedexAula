@@ -1,11 +1,7 @@
 import { createHTMLElement, getTypeStyles } from "../functions/functions";
-import pokeball from "../assets/modal/pokeball.svg";
-import heighticon from "../assets/modal/straighten.svg";
-import weighticon from "../assets/modal/weight.svg";
 
 export const openModal = (pokemon) => {
   const main = document.querySelector("main");
-  console.log(pokemon);
   const div = createHTMLElement("div", [
     "flex",
     "flex-col",
@@ -37,7 +33,6 @@ export const openModal = (pokemon) => {
     "shadow-2xl",
     `bg-${getTypeStyles(pokemon.types[0].type.name)}`,
     "relative",
-    "bg-[url(" + pokeball + ")]",
     "bg-opacity-70",
   ]);
   const closeButton = createHTMLElement("h2", [
@@ -101,7 +96,6 @@ export const openModal = (pokemon) => {
     "w-full",
   ]);
   const imgHeight = createHTMLElement("img", []);
-  imgHeight.src = heighticon;
   const height = createHTMLElement("h2");
   height.textContent = `${pokemon.height} cm`;
   const h2Height = createHTMLElement("h2", [
@@ -125,7 +119,6 @@ export const openModal = (pokemon) => {
     "w-full",
   ]);
   const imgWeight = createHTMLElement("img", []);
-  imgWeight.src = weighticon;
   const weigth = createHTMLElement("h2", []);
   weigth.textContent = `${pokemon.weight} gr`;
   const h2Weight = createHTMLElement("h2", [
@@ -220,7 +213,6 @@ export const openModal = (pokemon) => {
 
   const divStats = createHTMLElement("div", ["flex", "flex-col", "gap-2"]);
   const stats = pokemon.stats.map((stat) => {
-    console.log(stat);
     const divStat = createHTMLElement("div", [
       "flex",
       "justify-center",
@@ -255,9 +247,9 @@ export const openModal = (pokemon) => {
   divInfo.append(divTypes, divAtributes, titleStats, divStats);
   divAtributes.append(divWeight, divHeight, abilities);
   divWeight.append(divInfoWeight, h2Weight);
-  divInfoWeight.append(imgWeight, weigth);
+  divInfoWeight.append(weigth);
   divHeight.append(divInfoHeight, h2Height);
-  divInfoHeight.append(imgHeight, height);
+  divInfoHeight.append(height);
   abilities.append(...allAbilities);
   divStats.append(...stats);
 };
