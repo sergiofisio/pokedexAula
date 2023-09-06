@@ -6,7 +6,7 @@ const main = document.querySelector("main");
 const getPokemon = async () => {
   try {
     const { data } = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=1&offset=0"
+      "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
     );
     for (const pokemon of data.results) {
       const { data: pokemonData } = await axios.get(pokemon.url);

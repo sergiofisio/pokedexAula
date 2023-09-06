@@ -275,7 +275,7 @@ var getPokemon = /*#__PURE__*/function () {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return axios.get("https://pokeapi.co/api/v2/pokemon?limit=1&offset=0");
+          return axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0");
         case 3:
           _yield$axios$get = _context2.sent;
           data = _yield$axios$get.data;
@@ -376,7 +376,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57681" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54231" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
